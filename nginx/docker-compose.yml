@@ -1,0 +1,15 @@
+version: '0'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "82:80"
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./nginx_logs:/var/log/nginx
+      - ./html:/usr/share/nginx/html
+    restart: always
+    container_name: nginx_xv
+networks:
+  frontend:
+  backend:

@@ -1,0 +1,7 @@
+mysql/data
+nginx/html
+nginx/nginx
+nginx/nginx_logs
+
+!.gitignore
+nginx/nginx/nginx.conf
