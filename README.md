@@ -20,8 +20,8 @@ docker-compose up -d
 docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=888888 --name mysql_xv mysql
 
 # 复制配置文件以及数据目录
-docker cp mysql_xv:/var/lib/mysql ./mysql/data
-docker cp mysql_xv:/etc/mysql/conf.d ./mysql/mysql.d
+docker cp mysql_xv:/var/lib/mysql ./data
+docker cp mysql_xv:/etc/mysql/conf.d ./mysql.d
 
 # 更新密码
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '888888';
