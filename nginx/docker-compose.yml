@@ -1,4 +1,4 @@
-version: '0'
+version: '3'
 services:
   nginx:
     image: nginx
@@ -8,6 +8,7 @@ services:
       - ./nginx:/etc/nginx
       - ./nginx_logs:/var/log/nginx
       - ./html:/usr/share/nginx/html
+      - ./easy_format:/projects/easy_format
     restart: always
     container_name: nginx_xv
 networks:
