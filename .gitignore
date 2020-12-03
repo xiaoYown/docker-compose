@@ -2,6 +2,7 @@ mysql/data
 nginx/html
 nginx/nginx
 nginx/nginx_logs
+nginx/easy_format
 
 !.gitignore
 nginx/nginx/nginx.conf
