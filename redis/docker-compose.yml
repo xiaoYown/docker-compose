@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nginx:
+    image: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    container_name: redis_waimao
+networks:
+  frontend:
+  backend:
