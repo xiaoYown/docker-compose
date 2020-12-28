@@ -1,11 +1,12 @@
 version: '3'
 services:
-  nginx:
+  redis:
     image: redis
     ports:
       - "6379:6379"
     restart: always
     container_name: redis_waimao
+    command: redis-server --requirepass redis
 networks:
   frontend:
   backend:
