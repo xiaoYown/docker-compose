@@ -8,7 +8,7 @@ services:
       - ./nginx:/etc/nginx
       - ./nginx_logs:/var/log/nginx
       - ./html:/usr/share/nginx/html
-      - ./easy_format:/projects/easy_format
+      - ./:/projects
     restart: always
     container_name: nginx_xv
 networks:
