@@ -4,9 +4,11 @@ services:
     image: nginx
     ports:
       - "82:80"
+      - "84:82"
     volumes:
       - ./nginx:/etc/nginx
       - ./nginx_logs:/var/log/nginx
+      - ./ftp:/etc/ftp
       - ./html:/usr/share/nginx/html
       - ./:/projects
     restart: always
