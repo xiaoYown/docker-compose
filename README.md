@@ -32,3 +32,17 @@ docker rm -f <container_name>
 # 使用 docker-compose 启动容器
 docker-compose up -d
 ```
+
+#### gitea
+
+```yml
+docker pull gitea/gitea
+
+docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data gitea/gitea:latest
+docker cp gitea:/data ./data
+
+# 移除容器
+docker rm -f gitea
+
+docker-compose up -d
+```

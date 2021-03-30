@@ -4,7 +4,7 @@ services:
     image: redis
     ports:
       - "6379:6379"
-    restart: always
+    # restart: always
     container_name: redis_waimao
     command: redis-server --port 6379 --requirepass redis --appendonly yes
 networks:

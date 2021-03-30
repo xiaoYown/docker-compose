@@ -4,6 +4,7 @@ nginx/nginx
 nginx/nginx_logs
 nginx/easy_format
 nginx/module_federation
+gitea/data
 
 !.gitignore
 nginx/nginx/nginx.conf
