@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins_xv
+    privileged: true
+    ports:
+      - 50000:50000
+      - 8080:8080
+    volumes:
+      - ./jenkins-data:/var/jenkins_home

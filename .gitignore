@@ -2,9 +2,12 @@ mysql/data
 nginx/html
 nginx/nginx
 nginx/nginx_logs
+nginx/ftp
 nginx/easy_format
 nginx/module_federation
 gitea/data
+jenkins/jenkins-data
 
 !.gitignore
 nginx/nginx/nginx.conf
+nginx/ftp/index.md
