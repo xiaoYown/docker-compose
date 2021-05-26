@@ -23,6 +23,7 @@ gitlab:
       gitlab_rails['smtp_tls'] = true 
       gitlab_rails['gitlab_email_from'] = 'qzy09101018@sina.com' # 发送邮件的邮箱
       unicorn['worker_processes'] = 2
+      postgresql['max_worker_processes'] = 8
   ports:
     - '7080:80'
     - '443:443'
