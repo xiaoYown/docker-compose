@@ -1,0 +1,33 @@
+gitlab:
+  image: twang2218/gitlab-ce-zh:11.1.4
+  restart: unless-stopped
+  hostname: gitlab.example.com
+  container_name: gitlab_xv
+  environment:
+    TZ: Asia/Shanghai
+    GITLAB_OMNIBUS_CONFIG: |
+
+      # ssh相关（注意可能会和ssh连接工具端口冲突）
+      gitlab_rails['gitlab_ssh_host'] = 'gitlab.vm.com'
+      gitlab_rails['gitlab_shell_ssh_port'] = 7022
+
+      # email相关
+      gitlab_rails['smtp_enable'] = true
+      gitlab_rails['smtp_address'] = "smtp.sina.com" # smtp服务器地址
+      gitlab_rails['smtp_port'] = 465
+      gitlab_rails['smtp_user_name'] = "qzy09101018@sina.com" # 发送邮件的邮箱
+      gitlab_rails['smtp_password'] = "SINa19931102"     # 邮箱的授权码
+      gitlab_rails['smtp_domain'] = "smtp.sina.com"
+      gitlab_rails['smtp_authentication'] = "login"
+      gitlab_rails['smtp_enable_starttls_auto'] = true
+      gitlab_rails['smtp_tls'] = true 
+      gitlab_rails['gitlab_email_from'] = 'qzy09101018@sina.com' # 发送邮件的邮箱
+      unicorn['worker_processes'] = 2
+  ports:
+    - '7080:80'
+    - '443:443'
+    - '22:22'
+  volumes:
+    - ./etc:/etc/gitlab
+    - ./logs:/var/log/gitlab
+    - ./data:/var/opt/gitlab
