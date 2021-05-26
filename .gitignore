@@ -7,6 +7,9 @@ nginx/easy_format
 nginx/module_federation
 gitea/data
 jenkins/jenkins-data
+gitlab/data
+gitlab/etc
+gitlab/logs
 
 !.gitignore
 nginx/nginx/nginx.conf
