@@ -6,7 +6,7 @@ services:
     ports:
       - "4873:4873"
     container_name: verdaccio_xv
-    # volumes:
-    #   - ./verdaccio/conf:/verdaccio/conf
-    #   - ./verdaccio/storage:/verdaccio/storage
-    #   - ./verdaccio/plugins:/verdaccio/plugins
+    volumes:
+      - ./verdaccio/conf:/verdaccio/conf
+      - ./verdaccio/storage:/verdaccio/storage
+      - ./verdaccio/plugins:/verdaccio/plugins

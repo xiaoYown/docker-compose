@@ -10,6 +10,7 @@ jenkins/jenkins-data
 gitlab/data
 gitlab/etc
 gitlab/logs
+verdaccio/verdaccio
 
 !.gitignore
 nginx/nginx/nginx.conf
