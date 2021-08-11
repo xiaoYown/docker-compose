@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    image: verdaccio/verdaccio:4
+    restart: unless-stopped
+    ports:
+      - "4873:4873"
+    container_name: verdaccio_xv
+    # volumes:
+    #   - ./verdaccio/conf:/verdaccio/conf
+    #   - ./verdaccio/storage:/verdaccio/storage
+    #   - ./verdaccio/plugins:/verdaccio/plugins
