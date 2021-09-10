@@ -1,0 +1,12 @@
+version: '3'
+services:
+  redis:
+    image: redis:5.0.13
+    ports:
+      - "6379:6379"
+    # restart: always
+    container_name: redis_5.0
+    # command: redis-server --port 6379 --requirepass redis --appendonly yes
+networks:
+  frontend:
+  backend:
