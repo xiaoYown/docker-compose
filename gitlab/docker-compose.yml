@@ -8,7 +8,7 @@ gitlab:
     GITLAB_OMNIBUS_CONFIG: |
 
       # ssh相关（注意可能会和ssh连接工具端口冲突）
-      gitlab_rails['gitlab_ssh_host'] = 'gitlab.vm.com'
+      gitlab_rails['gitlab_ssh_host'] = '127.0.0.1'
       gitlab_rails['gitlab_shell_ssh_port'] = 7022
 
       # email相关
@@ -25,7 +25,7 @@ gitlab:
       gitlab_rails['gravatar_plain_url'] = 'http://cdn.libravatar.org/avatar/%{hash}?s=%{size}&d=identicon'
       unicorn['worker_processes'] = 2
       postgresql['max_worker_processes'] = 8
-      external_url 'http://192.168.1.178:7080'
+      external_url 'http://127.0.0.1:7080'
   ports:
     - '7080:7080'
     - '443:443'
