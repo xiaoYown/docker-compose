@@ -7,12 +7,10 @@ services:
       - "82:80"
       - "84:82"
       - "86:84"
+      - "88:86"
     volumes:
       - ./nginx:/etc/nginx
       - ./nginx_logs:/var/log/nginx
       - ./ftp:/etc/ftp
       - ./html:/usr/share/nginx/html
     container_name: nginx_xv
-networks:
-  frontend:
-  backend:
