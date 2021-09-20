@@ -11,6 +11,8 @@ gitlab/data
 gitlab/etc
 gitlab/logs
 verdaccio/verdaccio
+penpot/penpot_assets_data
+penpot/penpot_postgres_data
 
 !.gitignore
 nginx/nginx/nginx.conf
