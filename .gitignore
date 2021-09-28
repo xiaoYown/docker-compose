@@ -13,6 +13,7 @@ gitlab/logs
 verdaccio/verdaccio
 penpot/penpot_assets_data
 penpot/penpot_postgres_data
+kong/opt
 
 !.gitignore
 nginx/nginx/nginx.conf
