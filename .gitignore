@@ -1,6 +1,5 @@
 mysql/data
 nginx/html
-nginx/nginx
 nginx/nginx_logs
 nginx/ftp
 nginx/easy_format
@@ -14,7 +13,5 @@ verdaccio/verdaccio
 penpot/penpot_assets_data
 penpot/penpot_postgres_data
 kong/opt
-
-!.gitignore
-nginx/nginx/nginx.conf
-nginx/ftp/index.md
+code-server/.config
+code-server/project

@@ -1,16 +1,21 @@
-version: '3'
+version: "3"
 services:
   nginx:
     image: nginx
     restart: unless-stopped
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
     ports:
       - "82:80"
       - "84:82"
       - "86:84"
       - "88:86"
+      - "90:88"
+      - "13010:13010"
     volumes:
       - ./nginx:/etc/nginx
       - ./nginx_logs:/var/log/nginx
       - ./ftp:/etc/ftp
       - ./html:/usr/share/nginx/html
+      - ./vis-plugin-cdn:/usr/share/nginx/vis-plugin-cdn
     container_name: nginx_xv
