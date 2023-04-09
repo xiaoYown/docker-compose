@@ -1,0 +1,31 @@
+version: '3'
+services:
+  app:
+    image: local-transformers-pytorch-cpu
+    container_name: transformers_pytorch_cpu
+    # command: apt-get update && apt-get install -y python3.8 python3-pip
+    command: /usr/bin/python3 /workspace/main.py --port 8200
+    volumes:
+      - ./workspace:/workspace
+    # network_mode: bridge
+    ports:
+      - "127.0.0.1:8200:8200"
+    networks:
+      my-network:
+        ipv4_address: 172.16.238.10
+
+networks:
+  my-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24
+# docker run --rm -it -p 8200:8200 --name transformers_pytorch_cpu_02 -v /Volumes/dev-1/docker-conf/transformers-pytorch-cpu/workspace:/workspace huggingface/transformers-pytorch-cpu
+# docker run --rm -it -p 8200:8200 --name transformers_pytorch_cpu_02 -v /Volumes/dev-1/docker-conf/transformers-pytorch-cpu/workspace:/workspace local-transformers-pytorch-cpu
+
+# {
+#   "content": "我想去旅行",
+#   "model_name": "distilgpt2",
+#   "task": "text-generation",
+#   "max_length": 50
+# }
