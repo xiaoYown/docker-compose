@@ -3,11 +3,12 @@ services:
   app:
     image: local-transformers-pytorch-cpu
     container_name: transformers_pytorch_cpu
-    # command: apt-get update && apt-get install -y python3.8 python3-pip
-    command: /usr/bin/python3 /workspace/main.py --port 8200
+    command: /usr/bin/python3 /workspace/main-read-download.py --port 8200
+    # command: /usr/bin/python3 /workspace/download-bert-base-uncased.py
+    # command: /usr/bin/python3 /workspace/download_hfl-chinese-electra-180g-small-discriminator.py
     volumes:
       - ./workspace:/workspace
-    # network_mode: bridge
+      - ./.config:/root/.config
     ports:
       - "127.0.0.1:8200:8200"
     networks:
