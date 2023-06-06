@@ -1,6 +1,12 @@
-version: '3'
+version: "3"
 services:
-  nginx:
+  unpkg:
+    image: dalongrong/unpkg:http-env
+    environment:
+      - "NPM_REGISTRY_URL=http://npm-registry:4873"
+    ports:
+      - "8080:8080"
+  npm-registry:
     image: verdaccio/verdaccio:4
     restart: unless-stopped
     ports:
