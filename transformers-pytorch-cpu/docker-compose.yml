@@ -3,9 +3,8 @@ services:
   app:
     image: local-transformers-pytorch-cpu
     container_name: transformers_pytorch_cpu
-    command: /usr/bin/python3 /workspace/main-read-download.py --port 8200
-    # command: /usr/bin/python3 /workspace/download-bert-base-uncased.py
-    # command: /usr/bin/python3 /workspace/download_hfl-chinese-electra-180g-small-discriminator.py
+    # command: /usr/bin/python3 /workspace/main-read-download.py --port 8200
+    # command: /usr/bin/python3 /workspace/download_THUDM-chatglm-6b.py
     volumes:
       - ./workspace:/workspace
       - ./.config:/root/.config

@@ -23,7 +23,7 @@ services:
   # 执行数据库迁移
   ######################
   kong-migration:
-    image: kong:latest
+    image: kong:2.5.1
     command: "kong migrations bootstrap"
     networks:
       - kong-net
