@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  monitoring:
+    container_name: glances
+    image: nicolargo/glances:latest-full
+    pid: host
+    # network_mode: host
+    # restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - /run/user/1000/podman/podman.sock:/run/user/1000/podman/podman.sock
+    ports:
+      - "61208-61209:61208-61209"
+    environment:
+      - "GLANCES_OPT=-w"
+    # For nvidia GPUs
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+
+# docker run -d --restart="always" -p 61208-61209:61208-61209 -e GLANCES_OPT="-w" -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host nicolargo/glances:latest-full

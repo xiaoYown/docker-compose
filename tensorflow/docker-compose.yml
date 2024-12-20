@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    image: tensorflow/tensorflow_local
+    container_name: tensorflow
+    # command: python /workspace/ChatGLM-webui/webui.py --cpu --port 8800
+    # command: /bin/bash -c "cd /workspace/ChatGLM-webui && python webui.py --listen --share --cpu --port 8800 --model-path distilgpt2"
+    # command: /bin/bash -c "cd /workspace/ChatGLM-webui && python webui.py --listen --cpu --port 8800"
+    command: python /workspace/main.py
+    volumes:
+      - ./workspace:/workspace
+    ports:
+      # - "127.0.0.1:8800:8800"
+      - "8800:8800"
+      - "8888:8888"
+    networks:
+      - tensorflow-network
+        # ipv4_address: 172.20.238.10
+
+networks:
+  tensorflow-network:
+    # driver: bridge
+    # ipam:
+    #   config:
+    #     - subnet: 172.20.238.0/24
+
+
+# docker run -it -p 8800:8800 -v /Volumes/base/docker-compose/tensorflow/workspace:/workspace --network="bridge" tensorflow/tensorflow_local
