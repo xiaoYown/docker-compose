@@ -3,19 +3,27 @@ services:
   nginx:
     image: nginx
     restart: unless-stopped
-    stdin_open: true # docker run -i
-    tty: true # docker run -t
     ports:
-      - "82:80"
-      - "84:82"
-      - "86:84"
-      - "88:86"
-      - "90:88"
-      - "13010:13010"
+      - "80:80"
+      - "82:82"
+      - "84:84"
+      - "86:86"
+      - "94:94"
+      - "443:443"
     volumes:
       - ./nginx:/etc/nginx
       - ./nginx_logs:/var/log/nginx
       - ./ftp:/etc/ftp
       - ./html:/usr/share/nginx/html
       - ./vis-plugin-cdn:/usr/share/nginx/vis-plugin-cdn
+      - ./simple:/usr/simple
+      - ./ssl:/etc/nginx/ssl
+    networks:
+      - webnet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     container_name: nginx_xv
+
+networks:
+  webnet:
+    driver: bridge
