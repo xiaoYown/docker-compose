@@ -1,0 +1,35 @@
+version: '3'
+
+# networks:
+#   app-tier:
+#     driver: bridge
+
+services:
+  minio:
+    image: 'bitnami/minio:latest'
+    container_name: minio_xv
+    restart: unless-stopped
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    environment:
+      - MINIO_ROOT_USER=root
+      - MINIO_ROOT_PASSWORD=12345678
+      # - MINIO_HTTP_TRACE=/opt/bitnami/minio/log/minio.log
+    volumes:
+      - minio_data:/bitnami/minio/data
+    #   - minio_log:/bitnami/minio/log
+volumes:
+  minio_data:
+    driver: local
+  # minio_log:
+  #   driver: local
+  #   networks:
+  #     - app-tier
+  # myapp:
+  #   image: 'YOUR_APPLICATION_IMAGE'
+  #   networks:
+  #     - app-tier
+  #   environment:
+  #     - MINIO_SERVER_ACCESS_KEY=minio-access-key
+  #     - MINIO_SERVER_SECRET_KEY=minio-secret-key
