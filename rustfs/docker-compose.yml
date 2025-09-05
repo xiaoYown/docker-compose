@@ -1,0 +1,22 @@
+services:
+  rustfs:
+    image: rustfs/rustfs:1.0.0-alpha.50
+    # restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/data
+    environment:
+      - RUSTFS_HOST=0.0.0.0
+      # - RUSTFS_PORT=8080
+      - RUSTFS_ACCESS_KEY=admin
+      - RUSTFS_SECRET_KEY=88888888
+    networks:
+      - webnet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    container_name: rustfs_xv
+
+networks:
+  webnet:
+    driver: bridge

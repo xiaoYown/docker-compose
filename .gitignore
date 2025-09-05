@@ -15,5 +15,6 @@ penpot/penpot_postgres_data
 kong/opt
 code-server/.config
 code-server/project
+rustfs/data
 
 .DS_Store
